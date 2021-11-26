@@ -1,46 +1,46 @@
+:root {
+    --color-rect-default: #ebedf0;
+    --color-rect-border: rgba(27, 31, 35, 0.06);
+    --color-rect-L1: #9be9a8;
+    --color-rect-L2: #40c463;
+    --color-rect-L3: #30a14e;
+    --color-rect-L4: #216e39;
+}
+
 .frame {
-    display: grid;
-    grid-template-areas:
-        ". month month month month month month month month month month month month"
-        "week board board board board board board board board board board board board"
-        "week board board board board board board board board board board board board"
-        "week board board board board board board board board board board board board"
-        "week board board board board board board board board board board board board"
-        "week board board board board board board board board board board board board"
-        "week board board board board board board board board board board board board"
-        "week board board board board board board board board board board board board";
-    gap: 2px;
-    align-items: center;
+    padding: 1.2em;
+}
+
+.weeks, .months {
+    font-size: .6em;
+    position: absolute;
 }
 
 .weeks {
-    font-size: .6em;
-    grid-area: week;
-}
-
-.weeks p {
-    margin: 0;
+    left: 0;
 }
 
 .months {
-    font-size: .6em;
-    display: flex;
-    grid-area: month;
+    top: 0;
 }
 
 .board {
     display: grid;
-    grid-template:  [Su] 1fr [Mo] 1fr [Tu] 1fr [We] 1fr [Th] 1fr [Fr] 1fr [Sa] 1fr / repeat(53, 10px);
+    grid-template: [Su] 1fr [Mo] 1fr [Tu] 1fr [We] 1fr [Th] 1fr [Fr] 1fr [Sa] 1fr / repeat(53, 10px);
     grid-auto-flow: column;
-    gap: 2px;
-    align-items: center;
-    grid-area: board;
+    gap: .4em;
 }
 
 .rect {
     width: 10px;
     height: 10px;
-    background-color: rgb(199, 197, 197);
+    border-radius: 10%;
+    background-color: var(--color-rect-default);
+    border: 1px solid var(--color-rect-border);
+}
+
+.test {
+    border: 1px black solid;
 }
 
 .weekDaySu {
@@ -70,4 +70,3 @@
 .weekDaySa {
     grid-row-start: Sa;
 }
-
